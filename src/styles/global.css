@@ -1,0 +1,18 @@
+* {
+    color: white;
+}
+
+h1 {
+    color:powderblue;
+}
+
+nav > div > a {
+    color: peru;
+    margin: 0 10px;
+}
+
+body {
+    background: rgb(45, 57, 57);
+    height: 100vh;
+    margin: 0;
+}
