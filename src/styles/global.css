@@ -15,6 +15,13 @@ body {
 .layout {
     display: grid;
     grid-template-columns: 1fr 7fr;
+    grid-template-rows: 2fr;
     width: 100%;
     height: 100vh;
 }
+
+footer {
+    grid-column: 1 / span 2;
+    text-align: center;
+}
+
