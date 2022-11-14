@@ -1,9 +1,21 @@
-nav > div > a {
-    color: peru;
-    margin: 0 10px;
-}
-
-.links {
+nav {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+}
+
+.homeLogo > a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;
+}
+
+.navLinks {
+    display: flex;
+    flex-direction: column;
+}
+
+.navLinks > a {
+    color: peru;
+    margin: 20px 10px;
+    text-decoration: none;
 }
