@@ -4,22 +4,26 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export default function ImageMasonry() {
   const data = useStaticQuery(graphql`
-    query {
-      allFile {
+  query {
+    bezbogPhotos: allFile {
         edges {
           node {
             id
-            relativePath
+            childImageSharp {
+                gatsbyImageData(width: 600, quality: 100, formats: WEBP, tracedSVGOptions: {})  
+            }
           }
         }
       }
     }
   `)
 
+  console.log(data);
+
   return (
     <>
-      {data.allFile.edges.map(item => (
-        <img key={item.node.id} src={`src/${item.node.relativePath}`} alt={item.node.relativePath}/>
+      {data.bezbogPhotos.edges.map(image => (
+        <GatsbyImage key={image.node.id} image={image.node.childImageSharp.gatsbyImageData} alt={image.node.base}/>
       ))}
       <div>images here</div>
     </>
