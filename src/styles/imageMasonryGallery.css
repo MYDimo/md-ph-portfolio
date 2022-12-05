@@ -4,12 +4,17 @@
 }
 
 .lightBox {
-  display: flex;
-  z-index: 999;
-  top: 0;
+  position: absolute;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+  background: rgba(0, 0, 0, 0.96);
+  overflow: hidden;
+}
 
-  background: rgba(0, 0, 0, 0.8);
+.hui > div:first-child {
+  height: 100vh;
 }
