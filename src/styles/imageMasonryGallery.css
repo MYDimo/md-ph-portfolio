@@ -15,6 +15,6 @@
   overflow: hidden;
 }
 
-.hui > div:first-child {
+.lightBoxImg > div:first-child {
   height: 100vh;
 }

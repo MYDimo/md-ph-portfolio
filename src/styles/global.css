@@ -2,6 +2,10 @@
     color: white;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 h1 {
     color:powderblue;
 }
@@ -25,3 +29,6 @@ footer {
     text-align: center;
 }
 
+.noScroll {
+    overflow: hidden;
+}

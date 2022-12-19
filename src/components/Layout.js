@@ -4,13 +4,12 @@ import '../styles/global.css'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
-export default function Layout({ children, lightBox }) {
-  console.log(children);
+export default function Layout({ children, lightBox, hideLightbox }) {
   return (
-    <div className="layout">
+    <div className={`layout ${lightBox ? "noScroll" : ""}`}>
       {lightBox && (
-        <div className="lightBox">
-          <GatsbyImage image={lightBox} alt="" className="hui"/>
+        <div className="lightBox" onClick={() => hideLightbox()}>
+            <GatsbyImage image={lightBox} alt="" className="lightBoxImg" />
         </div>
       )}
       <Navbar />
