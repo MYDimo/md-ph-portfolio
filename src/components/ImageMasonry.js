@@ -6,7 +6,9 @@ import "../styles/imageMasonryGallery.css"
 export default function ImageMasonry({showLightbox}) {
   const data = useStaticQuery(graphql`
     query {
-      bezbogPhotos: allFile {
+      bezbogPhotos: allFile(
+        filter: {extension: {regex: "/(jpg)|(png)|(jpeg)/"}, relativeDirectory: {eq: "bezbog"}}
+      ) {
         edges {
           node {
             id

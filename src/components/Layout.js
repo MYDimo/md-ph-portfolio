@@ -1,6 +1,7 @@
 import React from "react"
 import Navbar from "./Navbar"
 import '../styles/global.css'
+
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 

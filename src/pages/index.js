@@ -9,7 +9,7 @@ export default function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    if (scrollPosition != 0) {
+    if (scrollPosition !== 0) {
       window.scrollTo(0, scrollPosition);
     }
   })
