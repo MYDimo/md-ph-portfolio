@@ -27,10 +27,18 @@ footer {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 16em) {
-  nav{
+  nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+    padding: 1vh 0vw 1vh 0vw;
+  }
+  .navLinks {
+    flex-direction: row;
+    padding: 10px 0px;
+  }
+  .navLinks > a {
+    margin: none;
   }
   .noDisplay {
     display: none;
@@ -43,7 +51,7 @@ footer {
     color: white;
   }
   .homeLogo > a{
-    font-size: 10vw;
+    font-size: max(45px, 10vw);
     word-wrap: break-all;
   }
   
@@ -53,9 +61,14 @@ footer {
   nav {
     flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
   }
   .navLinks {
     display: flex;
+    flex-direction: column;
+  }
+  .navLinks > a {
+    padding: 20px 0;
   }
   .layout {
     display: grid;

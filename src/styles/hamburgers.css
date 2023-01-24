@@ -6,6 +6,7 @@
  * @link https://github.com/jonsuh/hamburgers
  */
  .hamburger {
+    /* height: 4.5vw; */
     display: inline-block;
     cursor: pointer;
     transition-property: opacity, filter;
@@ -28,18 +29,19 @@
       background-color: rgb(255, 255, 255); }
   
   .hamburger-box {
-    width: 6vw;
-    height: 4vw;
+    width: 50px;
+    height: 50px;
     display: inline-block;
     position: relative; }
   
   .hamburger-inner {
     display: block;
-    top: 50%;
-    margin-top: -2px; }
+    top: 73%;
+    /* margin-top: -2px;  */
+  }
     .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-      width: 6vw;
-      height: 4.5px;
+      width: 45px;
+      height: 5px;
       background-color: rgb(255, 255, 255);
       border-radius: 4px;
       position: absolute;
@@ -50,9 +52,9 @@
       content: "";
       display: block; }
     .hamburger-inner::before {
-      top: -10px; }
+      top: -12px; }
     .hamburger-inner::after {
-      bottom: -10px; }
+      bottom: -12px; }
   
   
   /*
@@ -66,10 +68,10 @@
   
   .hamburger--arrowalt.is-active .hamburger-inner::before {
     top: 0;
-    transform: translate3d(-8px, -10px, 0) rotate(-45deg) scale(0.7, 1);
+    transform: translate3d(-10px, -10px, 0) rotate(-45deg) scale(0.7, 1);
     transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); }
   
   .hamburger--arrowalt.is-active .hamburger-inner::after {
     bottom: 0;
-    transform: translate3d(-8px, 10px, 0) rotate(45deg) scale(0.7, 1);
+    transform: translate3d(-10px, 10px, 0) rotate(45deg) scale(0.7, 1);
     transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); }
