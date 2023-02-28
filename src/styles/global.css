@@ -15,7 +15,7 @@ h1 {
 }
 
 body {
-  background: rgb(45, 57, 57);
+  background: rgb(223, 224, 228);
   height: 100vh;
   margin: 0;
 }
@@ -30,15 +30,14 @@ footer {
   nav {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
-    padding: 1vh 0vw 1vh 0vw;
+    align-items: center;
   }
   .navLinks {
+    width: 100%;
     flex-direction: row;
     padding: 10px 0px;
-  }
-  .navLinks > a {
-    margin: none;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
   }
   .noDisplay {
     display: none;

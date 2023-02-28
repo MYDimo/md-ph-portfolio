@@ -7,16 +7,25 @@
   position: absolute;
   left: 0;
   width: 100%;
+  height: 100vh;
   z-index: 10000;
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   line-height: 0;
   font-weight: normal;
-  background: rgba(45, 57, 57, 0.99);
+  background: rgb(223, 224, 228);
   overflow: hidden;
 }
 
 .lightBoxImg > div:first-child {
   height: 100vh;
+}
+
+.masonryImage {
+  margin-bottom: 1rem;
 }
 
 .masonryImage:hover {
@@ -26,4 +35,9 @@
 
 .lightBoxImg:hover {
     cursor: url("data:image/svg+xml,%3Csvg width='58' height='58' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath cx='99' cy='99' r='67' stroke='black' stroke-width='1.2121212121212122' d='M33.535 20A13.535 13.535 0 0 1 20 33.535A13.535 13.535 0 0 1 6.465 20A13.535 13.535 0 0 1 33.535 20z'/%3E%3Cpath d='M27.475 12.525L12.525 27.475' stroke='black' stroke-width='1.0101010101010102' stroke-linecap='round'/%3E%3Cpath d='M27.475 27.475L12.525 12.525' stroke='black' stroke-width='1.0101010101010102' stroke-linecap='round'/%3E%3C/svg%3E") 29 29, pointer;
+}
+
+.lightBox img {
+  top: 1vh;
+  height: 98vh;
 }

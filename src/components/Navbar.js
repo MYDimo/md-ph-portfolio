@@ -25,7 +25,7 @@ export default function Navbar() {
         <Link to="/albums">Albums</Link>
         <Link to="/about">About</Link>
       </div>
-      <button className={hamActive?"hamburger hamburger--arrowalt is-active":"hamburger hamburger--arrowalt"} type="button" onClick={toggleHam}>
+      <button className={hamActive?"hamburger hamburger--arrowalt ham-is-active":"hamburger hamburger--arrowalt"} type="button" onClick={toggleHam}>
         <span className="hamburger-box">
           <span className="hamburger-inner"></span>
         </span>

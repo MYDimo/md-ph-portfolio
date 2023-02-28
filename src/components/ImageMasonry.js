@@ -30,7 +30,7 @@ export default function ImageMasonry({showLightbox}) {
             id
             nameOfAlbum
             album {
-              gatsbyImageData(quality: 80, formats: WEBP, placeholder: BLURRED)
+              gatsbyImageData
               id
             }
           }

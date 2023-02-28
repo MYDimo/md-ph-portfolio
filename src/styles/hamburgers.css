@@ -31,12 +31,14 @@
   .hamburger-box {
     width: 50px;
     height: 50px;
-    display: inline-block;
-    position: relative; }
+    display: flex;
+    align-items: end;
+    position: relative; 
+  }
   
   .hamburger-inner {
     display: block;
-    top: 73%;
+    /* top: 73%; */
     /* margin-top: -2px;  */
   }
     .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
@@ -56,7 +58,6 @@
     .hamburger-inner::after {
       bottom: -12px; }
   
-  
   /*
      * Arrow Alt
      */
@@ -66,12 +67,16 @@
   .hamburger--arrowalt .hamburger-inner::after {
     transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1); }
   
-  .hamburger--arrowalt.is-active .hamburger-inner::before {
+  .hamburger--arrowalt.ham-is-active .hamburger-inner::before {
     top: 0;
     transform: translate3d(-10px, -10px, 0) rotate(-45deg) scale(0.7, 1);
     transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); }
   
-  .hamburger--arrowalt.is-active .hamburger-inner::after {
+  .hamburger--arrowalt.ham-is-active .hamburger-inner::after {
     bottom: 0;
     transform: translate3d(-10px, 10px, 0) rotate(45deg) scale(0.7, 1);
     transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); }
+
+    .ham-is-active > span {
+      align-items: center;
+    }
