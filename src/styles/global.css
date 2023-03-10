@@ -4,6 +4,7 @@
 
 html {
   overflow-y: scroll;
+  scrollbar-width:none;
 }
 
 h1 {
@@ -18,6 +19,7 @@ body {
   background: rgb(223, 224, 228);
   height: 100vh;
   margin: 0;
+  scrollbar-width: none;
 }
 
 footer {
@@ -25,13 +27,23 @@ footer {
   text-align: center;
 }
 
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 16em) {
+  
   nav {
+    position: fixed;
+    z-index: 9999;
+    background: rgb(223, 224, 228);
+    width: 100%;
+  }
+  .navWrapper {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
+
   .navLinks {
     width: 100%;
     flex-direction: row;
@@ -49,15 +61,28 @@ footer {
   .hamburger {
     color: white;
   }
-  .homeLogo > a{
+  .homeLogo > a {
     font-size: max(45px, 10vw);
     word-wrap: break-all;
   }
-  
+  .lightBox img {
+    /* top: 1vh; */
+    height: auto;
+    width: auto;
+  }
+
 }
 
 @media only screen and (min-width: 62em) {
+
+  html {
+    scrollbar-width: auto;
+  }
   nav {
+    position: relative;
+  }
+  .navWrapper {
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -79,9 +104,15 @@ footer {
   .hamburger {
     display: none;
   }
-  .homeLogo > a{
+  .homeLogo > a {
     font-size: 5vw;
   }
+  .lightBox img {
+    /* top: 1vh; */
+    height: auto;
+    width: auto;
+  }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
