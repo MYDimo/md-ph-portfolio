@@ -54,7 +54,7 @@ footer {
   .noDisplay {
     display: none;
   }
-  .layout {
+  .content {
     display: flex;
     flex-direction: column;
   }
@@ -96,12 +96,11 @@ footer {
   .navLinks > a {
     padding: 20px 0;
   }
-  .layout {
+  .content {
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 2fr;
     width: 100%;
-    height: 100vh;
   }
   .hamburger {
     display: none;

@@ -3,6 +3,11 @@
   column-gap: 0.5rem;
 }
 
+.lightBoxBg {
+  width: 100vw;
+  max-width:100%
+}
+
 .lightBox {
   position: fixed;
   width: 100%;
