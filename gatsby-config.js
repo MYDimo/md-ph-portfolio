@@ -3,9 +3,9 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
-const dotenv = require('dotenv');
+const dotenv = require("dotenv")
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== "production") {
   dotenv.config()
 }
 
@@ -37,8 +37,8 @@ module.exports = {
           pngOptions: {},
           webpOptions: {},
           avifOptions: {},
-        }
-      }
+        },
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
@@ -47,8 +47,8 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: "1luzw9h9hssv",
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-      }
-    }
-  ]
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+  ],
 }

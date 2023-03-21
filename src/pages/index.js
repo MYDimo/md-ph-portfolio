@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import ImageMasonry from "../components/ImageMasonry"
 import Layout from "../components/Layout"
 import { useState } from "react";
-import { useRef } from "react";
 
 export default function Home() {
   const [lightBox, setLightboxImg] = useState(false);
@@ -26,7 +25,7 @@ export default function Home() {
 
   return (
     <Layout lightBox={lightBox} hideLightbox={hideLightbox}>
-      <ImageMasonry showLightbox={showLightbox}
+      <ImageMasonry showLightbox={showLightbox} albumName={"Bezbog"}
       />
     </Layout>
   )

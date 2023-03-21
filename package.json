@@ -17,10 +17,11 @@
     "dotenv": "^16.0.3",
     "gatsby": "^5.5.0",
     "gatsby-plugin-image": "^3.5.0",
-    "gatsby-plugin-sharp": "^5.5.0",
+    "gatsby-plugin-sharp": "^5.7.0",
     "gatsby-source-contentful": "^8.5.0",
     "gatsby-source-filesystem": "^5.0.0",
-    "gatsby-transformer-sharp": "^5.5.0",
+    "gatsby-source-google-photos": "^3.1.1",
+    "gatsby-transformer-sharp": "^5.7.0",
     "graphql": "^16.6.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
