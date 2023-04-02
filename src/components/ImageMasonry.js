@@ -83,9 +83,6 @@ export default function ImageMasonry({ albumName }) {
   let newDataSet = data2.allContentfulAlbum.edges.filter(
     x => x.node.nameOfAlbum == albumName
   )
-  // console.log(lightBoxIdx)
-  // console.log("WTF???")
-  // // console.log(newDataSet[0].node.album[0].gatsbyImageData)
   return (
     <>
       {lightBox ? (
