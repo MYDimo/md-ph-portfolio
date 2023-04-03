@@ -23,6 +23,7 @@ export default function Navbar() {
           <Link to="/events">Events</Link>
           <Link to="/albums">Albums</Link>
           <Link to="/about">About</Link>
+          <Link to="/blog">Blog</Link>
         </div>
         <button
           className={
