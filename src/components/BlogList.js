@@ -3,30 +3,35 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 export default function BlogList() {
-  const { allMarkdownRemark } = useStaticQuery(graphql`
-      query {
-        allMarkdownRemark {
-          edges {
-            node {
-              frontmatter {
-                path
-                title
-              }
+  const result = useStaticQuery(graphql`
+    query {
+      allMdx {
+        edges {
+          node {
+            id
+            frontmatter {
+              slug
+              title
+              author
+              date
+              abstract
             }
           }
         }
       }
-    `
-  )
+    }
+  `)
   return (
-  <div className="postsWrapper">
+    <div className="postsWrapper">
       <ul>
-        {allMarkdownRemark.edges.map((item, i) => (
+        {result.allMdx.edges.map((item, i) => (
           <li key={i}>
-            <Link to={item.node.frontmatter.path}>{item.node.frontmatter.title}</Link>
+            <Link to={item.node.frontmatter.slug}>
+              {item.node.frontmatter.title}
+            </Link>
           </li>
         ))}
       </ul>
-  </div>
+    </div>
   )
 }

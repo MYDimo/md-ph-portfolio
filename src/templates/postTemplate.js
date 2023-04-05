@@ -1,30 +1,33 @@
-import Layout from "../components/Layout"
-import { graphql } from "gatsby"
 import React from "react"
+import { graphql } from "gatsby"
+import { MDXProvider } from "@mdx-js/react"
+import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
+import Layout from "../components/Layout"
 
-export default function Template({ data }) {
+const shortcodes = { Link } // Provide common components here
+
+export default function PageTemplate({ data, children }) {
   console.log(data)
-  const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+  const { mdx } = data
+  const { frontmatter } = mdx
   return (
     <Layout>
       <div className="blogPostWrapper">
         <h1>{frontmatter.title}</h1>
         <div>Author: {frontmatter.author}</div>
         <div>Publish date: {frontmatter.date}</div>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <MDXProvider components={shortcodes}>{children}</MDXProvider>
       </div>
     </Layout>
   )
 }
 
-export const pageQuery = graphql`
-  query ($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+export const query = graphql`
+  query ($id: String!) {
+    mdx(id: { eq: $id }) {
       frontmatter {
-        path
+        slug
         title
         author
         date

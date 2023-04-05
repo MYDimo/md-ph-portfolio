@@ -1,33 +1,40 @@
 const path = require(`path`)
+const postTemplate = path.resolve(`./src/templates/postTemplate.js`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const result = await graphql(`
-    {
-      allMarkdownRemark {
+    query {
+      allMdx {
         edges {
           node {
+            id
             frontmatter {
-              path
+              slug
+              title
+              author
+              date
+              abstract
+            }
+            internal {
+              contentFilePath
             }
           }
         }
       }
     }
   `)
-
   if (result.errors) {
-    reporter.panicOnBuild(`Error while ruinning GraphQl query`)
-    return
+    reporter.panicOnBuild("Error loading MDX result", result.errors)
   }
+  console.log(result);
+  const posts = result.data.allMdx.edges
 
-  const blogPostTemplate = path.resolve(`src/templates/postTemplate.js`)
-
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  posts.forEach(({ node }) => {
     createPage({
-      path: node.frontmatter.path,
-      component: blogPostTemplate,
-      context: {},
+      path: node.frontmatter.slug,
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: { id: node.id },
     })
   })
 }
