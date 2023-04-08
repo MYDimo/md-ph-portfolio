@@ -1,11 +1,13 @@
 .imageMasonryGallery {
   columns: 30rem;
   column-gap: 0.5rem;
+  grid-column-start: 2;
 }
 
 .lightBoxBg {
   width: 100vw;
-  max-width:100%
+  max-width:100%;
+  position: absolute
 }
 
 .lightBox {
