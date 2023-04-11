@@ -13,23 +13,11 @@ export default function Navbar() {
   return (
     <nav>
       <div className="navWrapper">
-        <div className={hamActive ? "homeLogo noDisplay" : "homeLogo"}>
-          <Link to="/">kiselyak.studio</Link>
-        </div>
-        <div className={hamActive ? "navLinks" : "navLinks noDisplay"}>
-          {/* <Link to="/">Home</Link> */}
-          <Link to="/portraits">Portraits</Link>
-          <Link to="/landscapes">Landscapes</Link>
-          <Link to="/events">Events</Link>
-          <Link to="/albums">Albums</Link>
-          <Link to="/about">About</Link>
-          <Link to="/blog">Blog</Link>
-        </div>
         <button
           className={
             hamActive
-              ? "hamburger hamburger--arrowalt ham-is-active"
-              : "hamburger hamburger--arrowalt"
+              ? "hamburger hamburger--spin is-active"
+              : "hamburger hamburger--spin"
           }
           type="button"
           onClick={toggleHam}
@@ -38,6 +26,15 @@ export default function Navbar() {
             <span className="hamburger-inner"></span>
           </span>
         </button>
+          <Link to="/" className={hamActive ? "homeLogo noDisplay" : "homeLogo"}>kiselyak.studio</Link>
+        <div className={hamActive ? "navLinks" : "navLinks  noDisplay"}>
+          <Link to="/portraits">Portraits</Link>
+          <Link to="/landscapes">Landscapes</Link>
+          <Link to="/events">Events</Link>
+          <Link to="/albums">Albums</Link>
+          <Link to="/about">About</Link>
+          <Link to="/blog">Blog</Link>
+        </div>
       </div>
     </nav>
   )

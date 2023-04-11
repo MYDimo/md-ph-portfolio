@@ -29,17 +29,16 @@ footer {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 16em) {
-  nav {
+  /* nav {
     position: fixed;
     z-index: 9999;
     background: rgb(223, 224, 228);
     width: 100%;
-  }
+  } */
   .navWrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
   }
 
   .navLinks {
@@ -52,7 +51,7 @@ footer {
   .noDisplay {
     display: none;
   }
-  .content {
+  .pageContent {
     display: flex;
     flex-direction: column;
   }
@@ -71,14 +70,26 @@ footer {
     scrollbar-width: auto;
   }
   nav {
-    position: relative;
+    grid-column-start: 1;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 0px 27px -10px #0000002e
+
   }
+
+  .rightSideWrapper {
+    grid-column-start: 2;
+  }
+
   .navWrapper {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    margin-top: 1rem;
     position: fixed;
+    height: 100vh;
+    /* align-items: center; */
+    width: inherit;
   }
   .navLinks {
     display: flex;
@@ -88,19 +99,22 @@ footer {
     padding: 20px 0;
     text-align: center;
   }
-  .content {
+  .pageContent {
     display: grid;
     grid-template-columns: 0.8fr 10fr;
     grid-template-rows: 2fr;
     width: 100%;
   }
-  .hamburger {
+  /* .hamburger {
     display: none;
-  }
+  } */
   .lightBox img {
     /* top: 1vh; */
     height: auto;
     width: auto;
+  }
+  .noDisplay {
+    display: none;
   }
 }
 
