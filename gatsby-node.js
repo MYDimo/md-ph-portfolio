@@ -5,20 +5,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allMdx {
+      allContentfulBlogPost {
         edges {
           node {
             id
-            frontmatter {
-              slug
-              title
-              author
-              date
-              abstract
-            }
-            internal {
-              contentFilePath
-            }
+            slug
           }
         }
       }
@@ -27,13 +18,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (result.errors) {
     reporter.panicOnBuild("Error loading MDX result", result.errors)
   }
-  console.log(result);
-  const posts = result.data.allMdx.edges
+
+  const posts = result.data.allContentfulBlogPost.edges
 
   posts.forEach(({ node }) => {
     createPage({
-      path: node.frontmatter.slug,
-      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+      path: node.slug,
+      component: postTemplate,
       context: { id: node.id },
     })
   })

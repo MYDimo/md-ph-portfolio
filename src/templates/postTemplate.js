@@ -1,40 +1,63 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { MDXProvider } from "@mdx-js/react"
-import { Link } from "gatsby"
-import { Helmet } from "react-helmet"
 import Layout from "../components/Layout"
 import ImageMasonry from "../components/ImageMasonry"
+import "../styles/blogPost.css"
 
 // const shortcodes = { Link } // Provide common components here
 
 export default function PageTemplate({ data, children }) {
   console.log(data)
-  const { mdx } = data
-  const { frontmatter } = mdx
+  const { contentfulBlogPost } = data
+  console.log(contentfulBlogPost.title)
   return (
     <Layout>
       <div className="blogPostWrapper">
-        <h1>{frontmatter.title}</h1>
-        <div>Author: {frontmatter.author}</div>
-        <div>Publish date: {frontmatter.date}</div>
-        <MDXProvider>{children}</MDXProvider>
+        <div className="blogPostCopy">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: contentfulBlogPost.postBody.childMarkdownRemark.html,
+            }}
+          />
+        </div>
+        {contentfulBlogPost.albumName && (
+          <ImageMasonry albumName={contentfulBlogPost.albumName} />
+        )}
       </div>
-        <ImageMasonry albumName={frontmatter.albumName} />
     </Layout>
   )
 }
 
+// export const query = graphql`
+//   query ($id: String!) {
+//     mdx(id: { eq: $id }) {
+//       frontmatter {
+//         slug
+//         title
+//         author
+//         date
+//         albumName
+//       }
+//     }
+//   }
+// `
+
 export const query = graphql`
   query ($id: String!) {
-    mdx(id: { eq: $id }) {
-      frontmatter {
-        slug
-        title
-        author
-        date
-        albumName
+    contentfulBlogPost(id: { eq: $id }) {
+      title
+      dateOfCreation
+      id
+      slug
+      abstract {
+        abstract
       }
+      postBody {
+        childMarkdownRemark {
+          html
+        }
+      }
+      albumName
     }
   }
 `

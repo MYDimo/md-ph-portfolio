@@ -22,14 +22,26 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-mdx`,
-     {
-       resolve: `gatsby-source-filesystem`,
-       options: {
-         name: `posts`,
-         path: `${__dirname}/src/posts`,
-       },
-     },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              classPrefix: 'language-',
+            },
+          },
+        ],
+      },
+    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `posts`,
+    //     path: `${__dirname}/src/posts`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-sharp`,
       options: {

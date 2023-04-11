@@ -14,7 +14,7 @@ export default function Navbar() {
     <nav>
       <div className="navWrapper">
         <div className={hamActive ? "homeLogo noDisplay" : "homeLogo"}>
-          <Link to="/">Mihaylo Dimo</Link>
+          <Link to="/">kiselyak.studio</Link>
         </div>
         <div className={hamActive ? "navLinks" : "navLinks noDisplay"}>
           {/* <Link to="/">Home</Link> */}

@@ -4,7 +4,7 @@
 
 html {
   overflow-y: scroll;
-  scrollbar-width:none;
+  scrollbar-width: none;
 }
 
 h1 {
@@ -27,10 +27,8 @@ footer {
   text-align: center;
 }
 
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 16em) {
-  
   nav {
     position: fixed;
     z-index: 9999;
@@ -61,20 +59,14 @@ footer {
   .hamburger {
     color: white;
   }
-  .homeLogo > a {
-    font-size: max(45px, 10vw);
-    word-wrap: break-all;
-  }
   .lightBox img {
     /* top: 1vh; */
     height: auto;
     width: auto;
   }
-
 }
 
 @media only screen and (min-width: 62em) {
-
   html {
     scrollbar-width: auto;
   }
@@ -87,7 +79,6 @@ footer {
     justify-content: flex-start;
     align-items: flex-start;
     position: fixed;
-    width: 20vw;
   }
   .navLinks {
     display: flex;
@@ -95,25 +86,22 @@ footer {
   }
   .navLinks > a {
     padding: 20px 0;
+    text-align: center;
   }
   .content {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 0.8fr 10fr;
     grid-template-rows: 2fr;
     width: 100%;
   }
   .hamburger {
     display: none;
   }
-  .homeLogo > a {
-    font-size: 5vw;
-  }
   .lightBox img {
     /* top: 1vh; */
     height: auto;
     width: auto;
   }
-
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
